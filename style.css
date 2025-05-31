@@ -1,0 +1,117 @@
+/* style.css */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo centralizado */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animação de fade lenta no carregamento */
+.fade-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation: fadeOut 4s forwards;
+  z-index: 100;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* Container dos cards */
+#card-container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo dos cards */
+.card {
+  position: absolute;
+  width: 100%;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  text-align: center;
+  cursor: default;
+}
+
+/* Primeiro e último card maiores */
+.first-card, .final-card {
+  font-size: 1.3rem;
+  padding: 2rem;
+  z-index: 20;
+}
+
+/* Polaroid style */
+.polaroid img {
+  width: 100%;
+  border-bottom: 5px solid #eee;
+  border-radius: 4px;
+}
+.caption {
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Controles (setas) */
+#controls {
+  position: fixed;
+  bottom: 2rem;
+  display: flex;
+  gap: 2rem;
+  z-index: 10;
+}
+#controls button {
+  font-size: 2rem;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Animações de saída */
+.card.slide-left {
+  transform: translateX(-150%) rotate(-10deg);
+  opacity: 0;
+}
+.card.slide-right {
+  transform: translateX(150%) rotate(10deg);
+  opacity: 0;
+}
+
+/* Esconde cards */
+.hidden {
+  display: none;
+}
+
+/* Cursor especial ao clicar */
+.polaroid:active {
+  cursor: grabbing;
+}

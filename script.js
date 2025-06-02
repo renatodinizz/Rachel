@@ -1,37 +1,79 @@
-// script.js
+const cards = document.querySelectorAll('.card');
+let currentIndex = 0;
 
-// Seleciona todos os cards (exceto o final e o overlay)
-const cards = Array.from(document.querySelectorAll('.card.polaroid'));
-const firstCard = document.querySelector('.first-card');
-const finalCard = document.getElementById('final-card');
-const leftBtn = document.getElementById('left');
-const rightBtn = document.getElementById('right');
-
-let currentIndex = -1; // -1 é o primeiro card (mensagem inicial)
-
-// Função para remover o card atual com animação
-function removeCard(direction) {
-  const currentCard = currentIndex === -1 ? firstCard : cards[currentIndex];
-
-  // Define a classe de animação
-  currentCard.classList.add(direction === 'left' ? 'slide-left' : 'slide-right');
-
-  // Aguarda o fim da animação para esconder
-  setTimeout(() => {
-    currentCard.classList.add('hidden');
-    currentIndex++;
-
-    // Se não há mais cards, mostra o final
-    if (currentIndex >= cards.length) {
-      finalCard.classList.remove('hidden');
-    }
-  }, 600);
+function showCard(index) {
+  cards.forEach(card => card.classList.add('hidden'));
+  const card = cards[index];
+  if (card) card.classList.remove('hidden');
 }
 
-// Eventos nos botões
-leftBtn.addEventListener('click', () => {
-  if (currentIndex < cards.length) removeCard('left');
+function handleSwipe(card, direction) {
+  card.style.transition = 'transform 1s ease, opacity 1s ease';
+  card.style.opacity = '0';
+  card.style.transform = `translateX(${direction === 'left' ? '-' : ''}100%)`;
+  setTimeout(() => {
+    currentIndex++;
+    showCard(currentIndex);
+  }, 1000);
+}
+
+function enableSwipe(card) {
+  let startX = 0;
+  let isDragging = false;
+
+  const onMouseMove = e => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - startX;
+    if (Math.abs(deltaX) > 50) {
+      handleSwipe(card, deltaX > 0 ? 'right' : 'left');
+      removeListeners();
+    }
+  };
+
+  const onMouseUp = () => {
+    isDragging = false;
+    removeListeners();
+  };
+
+  const removeListeners = () => {
+    window.removeEventListener('mousemove', onMouseMove);
+    window.removeEventListener('mouseup', onMouseUp);
+  };
+
+  card.addEventListener('mousedown', e => {
+    isDragging = true;
+    startX = e.clientX;
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+  });
+
+  card.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+
+  card.addEventListener('touchend', e => {
+    const deltaX = e.changedTouches[0].clientX - startX;
+    if (Math.abs(deltaX) > 50) {
+      handleSwipe(card, deltaX > 0 ? 'right' : 'left');
+    }
+  });
+}
+
+// Ativar swipe em todos os cards exceto último
+cards.forEach((card, index) => {
+  if (index < cards.length - 1) enableSwipe(card);
 });
-rightBtn.addEventListener('click', () => {
-  if (currentIndex < cards.length) removeCard('right');
+
+// Botão para sair do primeiro card
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.getElementById('btn-primeiro').disabled = false;
+  }, 3000);
+
+  document.getElementById('btn-primeiro').addEventListener('click', () => {
+    const card = cards[currentIndex];
+    handleSwipe(card, 'right');
+  });
+
+  showCard(currentIndex);
 });

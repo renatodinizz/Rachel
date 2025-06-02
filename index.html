@@ -3,248 +3,280 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para o Meu Amor 💖</title>
-  <!-- Link para o CSS externo -->
+  <!-- Link do favicon -->
+  <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
+  <title>Rachel 💖</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: url('img/fundo.jpg') no-repeat center center fixed;
-      background-size: cover;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    #overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(255, 255, 255, 0.95);
-      z-index: 999;
-      animation: fadeOutSlow 6s ease forwards;
-    }
-
-    @keyframes fadeOutSlow {
-      0% { opacity: 1; }
-      100% { opacity: 0; visibility: hidden; }
-    }
-
-    main#app {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    #titulo {
-      font-size: 2rem;
-      color: #fff;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-      margin-bottom: 2rem;
-    }
-
-    #card-container {
-      position: relative;
-      width: 100%;
-      max-width: 320px;
-      height: 400px;
-    }
-
-    .card {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      padding: 1rem;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.8s ease, opacity 0.8s ease;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .mensagem {
-      font-size: 1.2rem;
-      color: #333;
-      padding: 1rem;
-    }
-
-    .polaroid {
-      background: white;
-      padding: 10px;
-      border: 1px solid #ccc;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-      border-radius: 8px;
-    }
-
-    .polaroid img {
-      width: 100%;
-      border-radius: 4px;
-      cursor: grab;
-    }
-
-    .polaroid img:active {
-      cursor: grabbing;
-    }
-
-    .legenda {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    @media (max-width: 768px) {
-      #titulo {
-        font-size: 1.5rem;
-      }
-      .card {
-        height: 350px;
-      }
-    }
-  </style>
 </head>
 <body>
   <div id="overlay"></div>
 
   <main id="app">
-    <h1 id="titulo">Feliz Dia dos Namorados! 💘</h1>
+    <h1 id="titulo">Feliz Aniversário meu Amor!</h1>
+    <h3 id="data">01 Julho  de  2025</h3>
 
     <div id="card-container">
-      <div class="card" data-index="0">
-        <p class="mensagem">Meu amor, preparei algo especial para você...<br><br><button id="btn-primeiro">Ver ♥</button></p>
-      </div>
 
+      <!-- Primeiro card - mensagem inicial -->
+      <div class="card" id="first" data-index="0">
+
+        <h2 id="rachel">Rachel,</h2>
+        <p class="mensagem">
+          Você é a melhor pessoa que já conheci, este gesto é somente um reflexo sincero de tudo aquilo que sinto por você.
+        </p>
+        <p class="mensagem">
+          Eu sempre te digo que, se pudesse ver a maneira como te enxergo, você saberia o quanto te admiro e te acho incrível. E hoje, quero que você finalmente veja:
+        </p>
+
+        <div class="heart-container" id="btn-primeiro" disabled>
+          <img class="heart" src="/imagens/coracaoPulsar.webp" alt="Coração">
+          <span class="letra">VER</span>
+        </div>
+      </div>
+      
+      <!-- Outros cards 
       <div class="card hidden" data-index="1">
-        <div class="polaroid">
-          <img src="imagens/abacaxi.jpg" alt="Foto 1">
-          <p class="legenda">Legenda personalizada aqui 💬</p>
-        </div>
+        <img class="imagem-card" src="/imagens/1-coloPai.jpg" alt="Rachel no colo do Heleno">
+        <p class="legenda">Um bebê lindo que se tornou uma linda mulher</p>
       </div>
+
       <div class="card hidden" data-index="2">
-        <div class="polaroid">
-          <img src="imagens/picanha2.jpg" alt="Foto 1">
-          <p class="legenda">Legenda personalizada aqui 💬</p>
-        </div>
+        <img class="imagem-card" src="/imagens/2-anos5.jpg" alt="5 anos na escola">
+        <p class="legenda">Uma das pessoas mais inteligentes que conheço</p>
       </div>
+
       <div class="card hidden" data-index="3">
-        <div class="polaroid">
-          <img src="imagens/abacaxi.jpg" alt="Foto 1">
-          <p class="legenda">Legenda personalizada aqui 💬</p>
-        </div>
+        <img class="imagem-card" src="/imagens/3-irmaosJuntosTeens.jpg" alt="Rachel e irmãos na adolescência">
+        <p class="legenda">Desde sempre com uma carinha de anjo</p>
       </div>
+
       <div class="card hidden" data-index="4">
-        <div class="polaroid">
-          <img src="imagens/picanha2.jpg" alt="Foto 1">
-          <p class="legenda">Legenda personalizada aqui 💬</p>
-        </div>
+        <img class="imagem-card" src="/imagens/4-Smile.jpg" alt="Sorrindo na adolescência">
+        <p class="legenda">Um sorriso lindo e marcante</p>
       </div>
+
       <div class="card hidden" data-index="5">
-        <div class="polaroid">
-          <img src="imagens/abacaxi.jpg" alt="Foto 1">
-          <p class="legenda">Legenda personalizada aqui 💬</p>
-        </div>
+        <img class="imagem-card" src="/imagens/5-teen.jpg" alt="Adolescência na escola">
+        <p class="legenda">A mais linda por onde quer que passe</p>
       </div>
+
       <div class="card hidden" data-index="6">
-        <div class="polaroid">
-          <img src="imagens/picanha2.jpg" alt="Foto 1">
-          <p class="legenda">Legenda personalizada aqui 💬</p>
-        </div>
+        <img class="imagem-card" src="/imagens/6-filhaExemplar.jpg" alt="Rachel e Maud">
+        <p class="legenda">Uma filha exemplar,toda mãe deveria ter uma filha como você</p>
       </div>
+
       <div class="card hidden" data-index="7">
-        <div class="polaroid">
-          <img src="imagens/abacaxi.jpg" alt="Foto 1">
-          <p class="legenda">Legenda personalizada aqui 💬</p>
-        </div>
+        <img class="imagem-card" src="/imagens/7-netinha.jpg" alt="Rachel e sua avó">
+        <p class="legenda">Uma netinha muito carinhosa</p>
       </div>
+
       <div class="card hidden" data-index="8">
-        <div class="polaroid">
-          <img src="imagens/picanha2.jpg" alt="Foto 1">
-          <p class="legenda">Legenda personalizada aqui 💬</p>
-        </div>
+        <img class="imagem-card" src="/imagens/8-irmaosAdultos.jpg" alt="Rachel e irmãos adultos">
+        <p class="legenda">Uma luz para sua família</p>
       </div>
 
-      <!-- Adicione mais cards aqui -->
+      <div class="card hidden" data-index="9">
+        <img class="imagem-card" src="/imagens/9-noahBebe.jpg" alt="Noah bebê com Rachel">
+        <p class="legenda">Você é um exemplo de como deve ser o AMOR</p>
+      </div>
 
+      <div class="card hidden" data-index="10">
+        <img class="imagem-card" src="/imagens/10-nickColo.jpg" alt="Rachel com Nicholas no colo">
+        <p class="legenda">Uma mãe forte! Em todos os sentidos... rsrs</p>
+      </div>
+
+      <div class="card hidden" data-index="11">
+        <img class="imagem-card" src="/imagens/11-careta.jpg" alt="Rachel dando língua">
+        <p class="legenda">Uma mãe brincalhona e divertida</p>
+      </div>
+
+      <div class="card hidden" data-index="12">
+        <img class="imagem-card" src="/imagens/12-noahCareta.jpg" alt="Rachel e Noah na escola">
+        <p class="legenda">Uma mãe zelosa</p>
+      </div>
+
+      <div class="card hidden" data-index="13">
+        <img class="imagem-card" src="/imagens/13-criancaPintura.jpg" alt="Rachel e Nicholas pintando">
+        <p class="legenda">Uma mãe participativa</p>
+      </div>
+
+      <div class="card hidden" data-index="14">
+        <img class="imagem-card" src="/imagens/14-rafaEEla.jpg" alt="Rachel e Rafael">
+        <p class="legenda">Uma mãe aconselhadora</p>
+      </div>
+
+      <div class="card hidden" data-index="15">
+        <img class="imagem-card" src="/imagens/15-role.jpg" alt="Rachel e Kelly no carnaval">
+        <p class="legenda">Disposta a todo rolê</p>
+      </div>
+
+      <div class="card hidden" data-index="16">
+        <img class="imagem-card" src="/imagens/16-amigas.jpg" alt="Rachel, Kelly e Vanessa">
+        <p class="legenda">Excelente amiga</p>
+      </div>
+
+      <div class="card hidden" data-index="17">
+        <img class="imagem-card" src="/imagens/17-carinhosa.jpg" alt="Rachel beijando a Kelly">
+        <p class="legenda">Carinhosa com todos</p>
+      </div>
+
+      <div class="card hidden" data-index="18">
+        <img class="imagem-card" src="/imagens/18-quandoConheci.jpg" alt="Rachel em BSB">
+        <p class="legenda">Quando te conheci, foi impossível não me encantar com você!</p>
+      </div>
+
+      <div class="card hidden" data-index="19">
+        <img class="imagem-card" src="/imagens/19-bico.jpg" alt="Rachel fazendo bico">
+        <p class="legenda">O coração mais bondoso que já conheci</p>
+      </div>
       <div class="card hidden" data-index="20">
-        <p class="mensagem">Eu te amo para sempre. Obrigado por estar ao meu lado. ❤️</p>
+        <img class="imagem-card" src="/imagens/20-unhaAzul.jpg" alt="Rachel com unha azul">
+        <p class="legenda">Uma mulher extremamente inteligente</p>
+      </div>
+
+      <div class="card hidden" data-index="21">
+        <img class="imagem-card" src="/imagens/21-coroaDeFlores.jpg" alt="Rachel coroa de flores">
+        <p class="legenda">Sempre pensa primeiro nos outros</p>
+      </div>
+
+      <div class="card hidden" data-index="22">
+        <img class="imagem-card" src="/imagens/22-fotoQComentei.jpg" alt="A foto da Rachel que comentei">
+        <p class="legenda">A foto que não resisti e tive que comentar! rsrs</p>
+      </div>
+
+      <div class="card hidden" data-index="23">
+        <img class="imagem-card" src="/imagens/23-carrosel.jpg" alt="Rachel parecendo a professora do Carrossel">
+        <p class="legenda">Meiga e sensível</p>
+      </div>
+
+      <div class="card hidden" data-index="24">
+        <img class="imagem-card" src="/imagens/24-carnaval.jpg" alt="Rachel com fantasia de carnaval">
+        <p class="legenda">Minha razão de ser FELIZ</p>
+      </div>
+
+      <div class="card hidden" data-index="25">
+        <img class="imagem-card" src="/imagens/25-pezinho.jpg" alt="os pés da Rachel">
+        <p class="legenda">O pezinho mais lindo e que amo muito!</p>
+      </div>
+
+      <div class="card hidden" data-index="26">
+        <img class="imagem-card" src="/imagens/26-olharPEB.jpg" alt="Rachel em foto preto e branco">
+        <p class="legenda">Já falei que é a mulher mais linda do mundo?</p>
+      </div>
+
+      <div class="card hidden" data-index="27">
+        <img class="imagem-card" src="/imagens/27-todaDeRosa.jpg" alt="Rachel com coroa rosa">
+        <p class="legenda">Um jeito que me conquistou tão rápido</p>
+      </div>
+
+      <div class="card hidden" data-index="28">
+        <img class="imagem-card" src="/imagens/28-SorrisoSP.jpg" alt="Rachel em SP">
+        <p class="legenda">Não esqueço mais esse sorriso</p>
+      </div>
+
+      <div class="card hidden" data-index="29">
+        <img class="imagem-card" src="/imagens/29-pastel.jpg" alt="Rachel e eu comendo pastel">
+        <p class="legenda">Foi maravilhoso te reencontrar, mudou minha vida</p>
+      </div>
+
+      <div class="card hidden" data-index="30">
+        <img class="imagem-card" src="/imagens/30-pontao.jpg" alt="Rachel e eu no pontão">
+        <p class="legenda">Meu grudinho</p>
+      </div>
+
+      <div class="card hidden" data-index="31">
+        <img class="imagem-card" src="/imagens/31-cheiro.jpg" alt="Rachel e eu no shopping">
+        <p class="legenda">Eu amo quando você fica me cheirando</p>
+      </div>
+
+      <div class="card hidden" data-index="32">
+        <img class="imagem-card" src="/imagens/32-congresso.jpg" alt="Rachel e eu no congresso">
+        <p class="legenda">Todo rolê com você é único</p>
+      </div>
+
+      <div class="card hidden" data-index="33">
+        <img class="imagem-card" src="/imagens/33-casamento.jpg" alt="Rachel e eu no casamento">  
+        <p class="legenda">Minha melhor amiga</p>
+      </div>
+
+      <div class="card hidden" data-index="34">
+        <img class="imagem-card" src="/imagens/34-beijo.jpg" alt="Rachel e eu nos beijando">  
+        <p class="legenda">Melhor beijo do mundo!</p>
+      </div>
+
+      <div class="card hidden" data-index="35">
+        <img class="imagem-card" src="/imagens/35-park.jpg" alt="Rachel e eu no parque">
+        <p class="legenda">Minha companheira! rsrs</p>
+      </div>
+
+      <div class="card hidden" data-index="36">
+        <img class="imagem-card" src="/imagens/36-folgos.jpg" alt="Rachel e eu na praia no reveillon">
+        <p class="legenda">Quero passar todos os anos da minha vida com você</p>
+      </div> 
+      
+      <div class="card hidden" data-index="37">
+        <img class="imagem-card" src="/imagens/37-templo.jpg" alt="Rachel e eu no templo">
+        <p class="legenda">Quero você para a eternidade, Minha vidinha!</p>
+      </div> -->
+      
+      <div class="card hidden zero" data-index="1">
+        <p class="mensagem">
+          É <strong>exatamente</strong> assim que você é, eu juro!                
+        </p>
+        <p class="mensagem">
+          Você é uma pessoa incrível, com um jeito único de iluminar cada momento e de fazer qualquer dia ficar mais bonito só por estar presente.          
+        </p>
+        <p class="mensagem">
+          Eu te admiro profundamente por quem você é — por sua força, por sua ternura, e pela forma como consegue trazer alegria e paz ao mundo mesmo nos dias difíceis.         
+        </p>
+      </div>
+
+      <div class="card hidden zero" data-index="2">
+        <p class="mensagem">
+          Eu vejo em você uma pessoa que tem a capacidade de acalmar o meu coração e de me inspirar a ser alguém melhor a cada dia.                
+        </p>
+        <p class="mensagem">
+          Eu tento dar o meu melhor a cada dia porque você merece tudo de mais lindo, e por que para mim é um prazer e uma alegria fazer tudo o que posso para te ver feliz.          
+        </p>
+        <p class="mensagem">
+          Quero que saiba que estarei sempre aqui, torcendo por você, apoiando seus sonhos e celebrando cada conquista sua.         
+        </p>
+      </div>
+
+      <div class="card hidden zero" data-index="3">
+        <p class="mensagem">
+          Você é tudo aquilo que eu sempre busquei e muito mais, e estar ao seu lado me faz perceber que não preciso de mais nada para ser feliz. A certeza de que encontrei alguém que faz tudo valer a pena.                
+        </p>
+        <p class="mensagem">
+          Sempre sonhei em ter alguém como você — alguém com toda a bondade, carinho e luz que você carrega. Encontrei tudo o que eu sempre busquei reunido em apenas uma pessoa: você.          
+        </p>
+      </div>
+
+      <div class="card hidden zero" data-index="4">
+        <p class="mensagem">
+          Você é uma pessoa extremamente especial. Não só para mim, mas para todos que têm a sorte de cruzar o seu caminho. Você faz o mundo ao seu redor mais leve, mais bonito e mais cheio de esperança.                
+        </p>
+        <p class="mensagem">
+          Quero que saiba que, para mim, você é exatamente assim: extraordinária em cada detalhe e essencial em cada passo da minha vida.          
+        </p>
+      </div>
+      
+
+      <!-- Último card - mensagem final -->
+      <div class="card hidden zero" data-index="5">
+        <p class="mensagem">
+          Quando comecei a falar com você, eu não sabia que estava conhecendo não apenas alguém para dividir momentos, mas sim a pessoa com quem dividiria todos os meus sonhos e todas as minhas manhãs.               
+        </p>
+        <p class="mensagem">
+          Com todo o amor que existe em mim,          
+        </p>
+        <p class="autor">
+          Renato Diniz
+        </p>
       </div>
     </div>
   </main>
 
-  <script>
-    const cards = document.querySelectorAll('.card');
-    let currentIndex = 0;
-
-    function showCard(index) {
-      cards.forEach(card => card.classList.add('hidden'));
-      const card = cards[index];
-      if (card) card.classList.remove('hidden');
-    }
-
-    function handleSwipe(card, direction) {
-      card.style.transition = 'transform 1s ease, opacity 1s ease';
-      card.style.opacity = '0';
-      card.style.transform = `translateX(${direction === 'left' ? '-' : ''}100%)`;
-      setTimeout(() => {
-        currentIndex++;
-        showCard(currentIndex);
-      }, 1000);
-    }
-
-    function enableSwipe(card) {
-      let startX;
-      card.addEventListener('mousedown', e => startX = e.clientX);
-      card.addEventListener('mouseup', e => {
-        if (!startX) return;
-        const deltaX = e.clientX - startX;
-        if (Math.abs(deltaX) > 50) {
-          handleSwipe(card, deltaX > 0 ? 'right' : 'left');
-        }
-        startX = null;
-      });
-
-      card.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-      card.addEventListener('touchend', e => {
-        if (!startX) return;
-        const deltaX = e.changedTouches[0].clientX - startX;
-        if (Math.abs(deltaX) > 50) {
-          handleSwipe(card, deltaX > 0 ? 'right' : 'left');
-        }
-        startX = null;
-      });
-    }
-
-    // Ativar swipe nos cards com imagem (index 1 até penúltimo)
-    cards.forEach((card, index) => {
-      if (index > 0 && index < cards.length - 1) {
-        const img = card.querySelector('img');
-        if (img) enableSwipe(card);
-      }
-    });
-
-    // Botão para sair do primeiro card
-    document.getElementById('btn-primeiro').addEventListener('click', () => {
-      const card = cards[currentIndex];
-      handleSwipe(card, 'right');
-    });
-
-    showCard(currentIndex);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

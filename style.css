@@ -2,25 +2,31 @@
 
 @font-face {
     font-family: 'CinzelDecorative';
-    src: url(font/CinzelDecorative-Regular.ttf) format('truetype');
+    src: url(./font/CinzelDecorative-Regular.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'GreatVibes';
-    src: url(font/GreatVibes-Regular.ttf) format('truetype');
+    src: url(./font/GreatVibes-Regular.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'GloriaHallelujah';
-    src: url(font/GloriaHallelujah-Regular.ttf) format('truetype');
+    src: url(./font/GloriaHallelujah-Regular.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Inter';
-    src: url(/font/Inter-VariableFont_opsz\,wght.ttf) format('truetype');
+    font-family: 'Parisienne';
+    src: url(./font/Parisienne-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Allura';
+    src: url(./font/Allura-Regular.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -74,7 +80,7 @@ main#app {
   font-size: 1.8rem;
   color: #fff;
   margin-bottom: 2rem;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
   font-style: italic;
 }
 
@@ -86,10 +92,10 @@ main#app {
 }
 
 #rachel {
-  font-family: 'CinzelDecorative', serif;
-  font-size: 2.5rem;
+  font-family: 'GreatVibes', cursive;
+  font-size: 3.5rem;
   color: #fc9e9c;
-  text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
 .card {
@@ -119,13 +125,13 @@ main#app {
 }
 
 .mensagem {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Parisienne';
   text-align: left;
   text-indent: 2rem;
   line-height: 1.8rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #333;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
 }
 
 .imagem-card {
@@ -155,8 +161,8 @@ main#app {
 }
 
 .autor {
-  font-family: 'CinzelDecorative', serif;
-  font-size: 1.5rem;
+  font-family: 'Allura', cursive;
+  font-size: 3.5rem;
   color: #333;
   font-weight: bold;
   margin-top: 1.5rem;
@@ -225,15 +231,18 @@ main#app {
   }
 
   #rachel {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
   }
 
   .mensagem {
   text-indent: 2rem;
   line-height: 1.2rem;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  padding: 0.5rem 1.5rem;
+  }
+  .autor {
+  font-size: 2.5rem;
   }
 
   .zero {
